@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import { Container, Links, Content } from "./styles"
 
 import { Tag } from "../../components/Tag"
@@ -7,6 +8,8 @@ import { Header } from "../../components/Header"
 import { Section } from "../../components/Section"
 
 export function Details(){
+  const navigate = useNavigate()
+
   return(
     <Container>
       <Header/>
@@ -43,7 +46,10 @@ export function Details(){
             <Tag title="nodejs"/>
           </Section>
 
-          <Button title="Voltar"/> 
+          <Button 
+            title="Voltar"
+            onClick={() => navigate("/")}
+          /> 
         </Content>
       </main>
     </Container>
